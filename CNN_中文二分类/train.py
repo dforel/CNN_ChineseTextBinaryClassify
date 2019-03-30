@@ -36,7 +36,7 @@ FLAGS = tf.flags.FLAGS
 # Load data，这里也可以打乱数据，后面在计算batch时还需要打乱一次
 print("Loading data...")
 x_text, y = data_helpers.load_data_and_labels(FLAGS.jisuanji_data_file, FLAGS.jiaotong_data_file)
-print " =========Loading data x_text==============  "
+print (" =========Loading data x_text==============  ")
 
 # 获得训练实例中的最长的文本的长度
 max_document_length = max([len(x.split(" ")) for x in x_text])
@@ -52,7 +52,7 @@ np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
 x_shuffled = x[shuffle_indices]
 y_shuffled = y[shuffle_indices]
-print x_shuffled.shape
+print (x_shuffled.shape)
 
 # 2:1[100,100]
 # 7:
@@ -63,7 +63,7 @@ dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
 x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
 # skleran
 
-print "x_train.shape[1]:",x_train.shape[1]
+print ("x_train.shape[1]:",x_train.shape[1])
 
 y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
 print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))

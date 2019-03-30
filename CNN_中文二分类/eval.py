@@ -111,8 +111,9 @@ for i in all_predictions:
         y.append("[计算机]")
 # 把预测的结果保存到本地
 predictions_human_readable = np.column_stack((y,np.array(x_raw)))
-out_path = os.path.join(FLAGS.checkpoint_dir, "..", "prediction.csv")
-print("Saving evaluation to {0}".format(out_path))
-with open(out_path, 'w') as f:
-    csv.writer(f).writerows(predictions_human_readable)
+print(predictions_human_readable)
+#out_path = os.path.join(FLAGS.checkpoint_dir, "..", "prediction.csv")
+#print("Saving evaluation to {0}".format(out_path))
+#with open(out_path, 'w') as f:
+#   csv.writer(f).writerows(predictions_human_readable)
 
